@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DarknetDiaries_Scraper"
+description = "Get DarknetDiaries podcasts from the commandline."
+readme = "README.md"
+license = {text = "MIT License"}
+version = "1.0.0"
+requires-python = ">=3.11"
+authors = [
+  {name = "David", email = "dmcfarland8031@gmai.com"}
+]
+keywords = ["tools", "automation"]
+classifiers = [
+    "Development Status :: 5 - stable",
+    "Natural Language :: English",
+    "Operating System :: Linux",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development"
+]
+dependencies = [
+    "requests>=2.0",
+    "lxml>=5.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/killrpenguin/DarknetDiaries_Scraper.git"
+
+[tool.ruff]
+ignore = ["E501"]
+
+[tool.ruff.extend-per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.yapfignore]
+ignore_patterns = []
+
+[tool.yapf]
+based_on_style = "pep8"
+spaces_before_comment = 4
+split_before_logical_operator = true
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["src*"]
+exclude = ["tests*"]
