@@ -1,5 +1,8 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = [
+	"setuptools>=61.0",
+	"setuptools-scm>=8.0"	
+]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -37,13 +40,13 @@ ignore = ["E501"]
 [tool.ruff.extend-per-file-ignores]
 "__init__.py" = ["F401"]
 
-[tool.yapfignore]
-ignore_patterns = []
+# [tool.yapfignore]
+# ignore_patterns = []
 
-[tool.yapf]
-based_on_style = "pep8"
-spaces_before_comment = 4
-split_before_logical_operator = true
+# [tool.yapf]
+# based_on_style = "pep8"
+# spaces_before_comment = 4
+# split_before_logical_operator = true
 
 [tool.pyright]
 typeCheckingMode = "strict"
@@ -53,3 +56,6 @@ typeCheckingMode = "strict"
 where = ["src"]
 include = ["src*"]
 exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+mypkg = ["*.xml"]
